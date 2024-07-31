@@ -1,3 +1,12 @@
+import { createApp } from 'vue';
+import PostComponent from './components/PostComponent.vue';
 import './bootstrap';
-import ujs from '@rails/ujs';
-ujs.start();
+
+const app = createApp({
+    el: '#app',
+
+    components:{
+        'post-component': PostComponent,
+    }
+});
+app.mount('#app');

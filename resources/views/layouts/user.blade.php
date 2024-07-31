@@ -94,10 +94,15 @@
 
         <div class="bottom-content">
             <li class="">
-                <a href="#">
+
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i class='bx bx-log-out icon' ></i>
                     <span class="text nav-text">Выход</span>
                 </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
             </li>
 
 
