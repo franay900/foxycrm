@@ -34,7 +34,7 @@ class OrganizationController extends Controller
         $name = $data['user_name'];
         $surname = $data['user_surname'];
         $password = Str::random(8);
-        $username = strtolower(substr($name, 0, 1) . $surname . rand(100, 999));
+        $username = $name.$surname.rand(1,999999);
         $user = User::create([
             'organization_id' => $organization->id,
             'name' => $data['user_name'],

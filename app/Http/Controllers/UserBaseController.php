@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserBaseController extends Controller
 {
@@ -12,7 +13,9 @@ class UserBaseController extends Controller
     public function index()
     {
         $title = 'База данных пользователей';
-        return view('userbase.index', compact('title'));
+        $organization = Auth::user()->organization_id;
+        $users = User::where('organization_id',$organization)->get();
+        return view('userbase.index', compact('title','users'));
     }
 
     /**
