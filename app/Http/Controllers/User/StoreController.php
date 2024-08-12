@@ -26,6 +26,6 @@ class StoreController extends Controller
             'username' => $username,
             'password' => bcrypt($password)
         ]);
-        return $data;
+        return response([]);
     }
 }

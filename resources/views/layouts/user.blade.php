@@ -14,9 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!--<title>Dashboard Sidebar Menu</title>-->
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -116,42 +115,16 @@
 
 </nav>
 
-<section class="home">
+<section class="home" id="app">
     <div class="text">{{ $title ?? 'Не указано'  }}</div>
     <div class="content">
         @yield('content')
+
     </div>
 
 </section>
 
-<script>
-    const body = document.querySelector('body'),
-        sidebar = body.querySelector('nav'),
-        toggle = body.querySelector(".toggle"),
-        searchBtn = body.querySelector(".search-box"),
-        modeSwitch = body.querySelector(".toggle-switch"),
-        modeText = body.querySelector(".mode-text");
 
-
-    toggle.addEventListener("click" , () =>{
-        sidebar.classList.toggle("close");
-    })
-
-    searchBtn.addEventListener("click" , () =>{
-        sidebar.classList.remove("close");
-    })
-
-    modeSwitch.addEventListener("click" , () =>{
-        body.classList.toggle("dark");
-
-        if(body.classList.contains("dark")){
-            modeText.innerText = "Light mode";
-        }else{
-            modeText.innerText = "Dark mode";
-
-        }
-    });
-</script>
 
 </body>
 </html>

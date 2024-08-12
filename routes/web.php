@@ -18,7 +18,7 @@ Route::patch('/organization/{organization}', [OrganizationController::class, 'up
 Route::delete('/organization/{organization}', [OrganizationController::class, 'destroy'])->name('organization.destroy');
 
 
-Route::get('/userbase',[UserBaseController::class, 'index'])->name('userbase.index');
+Route::get('/user/{any?}/{page?}',[UserBaseController::class, 'index'])->name('userbase.index');
 
 Auth::routes();
 

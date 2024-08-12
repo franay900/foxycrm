@@ -1,12 +1,20 @@
 import { createApp } from 'vue';
-import PostComponent from './components/PostComponent.vue';
+import store from './store';
 import './bootstrap';
+import router from './router';
+import Index from "./components/Index.vue";
 
 const app = createApp({
     el: '#app',
 
     components:{
-        'post-component': PostComponent,
-    }
+        Index
+    },
+
+
 });
+
+
+app.use(router);
+app.use(store);
 app.mount('#app');
